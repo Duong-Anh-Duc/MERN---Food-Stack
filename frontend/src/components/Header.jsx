@@ -7,7 +7,7 @@ import { MdClose, MdMenu } from "react-icons/md"
 import { TbLogout } from "react-icons/tb"
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Navbar from './Navbar'
-const Header = () => {
+const Header = ({setShowLogin}) => {
     const [menuOpened, setMenuOpened] = useState(false)
     const [token, settoken] = useState(false)
     const [header, setHeader] = useState(false)
@@ -63,7 +63,7 @@ const Header = () => {
                     <span className='bg-white text-tertiary text-sm absolute -right-2.5 -top-2.5 flexCenter w-5 h-5 rounded-full shadow-md'>0</span>
                     </Link>
                     {!token ? (
-                        <button className='btn-light rounded-full flexCenter gap-x-2'>Login<LuUser2 className = "bold-18" /></button>
+                        <button onClick = {() => setShowLogin(true)} className='btn-light rounded-full flexCenter gap-x-2'>Login<LuUser2 className = "bold-18" /></button>
                     ) : (
                     <div className='group relative'>
                         <FaCircleUser className='text-2xl' />

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaMinus, FaPlus } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext'
 const Item = ({product}) => {
+    const {cartItems, addToCart, removeFromCart} = useContext(ShopContext)
     return (
         <div className='ring-1 ring-slate-900/5 rounded-xl'>
             <Link to = {""} className = 'flexCenter p-4 ring-1 ring-slate-200/20 bg-white rounded-xl'>
@@ -18,9 +20,9 @@ const Item = ({product}) => {
             <div class = 'flex flex-col gap-2 medium-14'>
                 <h5>Savings</h5>
                 <div className='bg-primary flexBetween gap-2 rounded-sm'>
-                    <FaMinus className='bg-primary h-5 w-5 p-1 cursor-pointer rounded-sm' />
-                    <p>0</p>
-                    <FaPlus className='bg-secondary h-5 w-5 p-1 cursor-pointer rounded-sm'/>
+                    <FaMinus onClick={()=>removeFromCart(product._id)} className='bg-primary h-5 w-5 p-1 cursor-pointer rounded-sm' />
+                    <p>{cartItems[product._id] >= 0 ? cartItems[product._id] : 0}</p>
+                    <FaPlus onClick={()=>addToCart(product._id)} className='bg-secondary h-5 w-5 p-1 cursor-pointer rounded-sm'/>
                 </div>
             </div>
             <hr className = 'w-[1px] h-12 bg-slate-900/20'/>

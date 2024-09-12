@@ -1,7 +1,8 @@
-import React from 'react'
-import { all_products } from '../assets/data'
+import React, { useContext } from 'react'
 import Item from '../components/Item'
+import { ShopContext } from '../context/ShopContext'
 const ProductDisplay = ({category}) => {
+    const {all_products} = useContext(ShopContext)
     return (
         <section id = 'foods' className = 'max-padd-container py-16 xl:py-28'>
              <div className='max-w-[622px] pb-20 mx-auto text-center'>
