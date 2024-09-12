@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaCircleUser } from "react-icons/fa6"
 import { FiPackage } from "react-icons/fi"
 import { GiShoppingBag } from 'react-icons/gi'
@@ -6,6 +6,7 @@ import { LuUser2 } from "react-icons/lu"
 import { MdClose, MdMenu } from "react-icons/md"
 import { TbLogout } from "react-icons/tb"
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext'
 import Navbar from './Navbar'
 const Header = ({setShowLogin}) => {
     const [menuOpened, setMenuOpened] = useState(false)
@@ -13,6 +14,7 @@ const Header = ({setShowLogin}) => {
     const [header, setHeader] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
+    const {getTotalCartItems} = useContext(ShopContext)
     const toggleMenu = () => {
         setMenuOpened(!menuOpened)
     }
@@ -60,7 +62,7 @@ const Header = ({setShowLogin}) => {
                     )}
                     <Link to ={'/cart'} className='flex relative'>
                     <GiShoppingBag className = "text-[25px]" />
-                    <span className='bg-white text-tertiary text-sm absolute -right-2.5 -top-2.5 flexCenter w-5 h-5 rounded-full shadow-md'>0</span>
+                    <span className='bg-white text-tertiary text-sm absolute -right-2.5 -top-2.5 flexCenter w-5 h-5 rounded-full shadow-md'>{getTotalCartItems()}</span>
                     </Link>
                     {!token ? (
                         <button onClick = {() => setShowLogin(true)} className='btn-light rounded-full flexCenter gap-x-2'>Login<LuUser2 className = "bold-18" /></button>
@@ -70,7 +72,7 @@ const Header = ({setShowLogin}) => {
                         <ul className='bg-primary shadow-sm p-3 w-24 ring-1 ring-slate-900/15 rounded absolute right-0 hidden group-hover:flex flex-col'>
                             <li className='flexCenter gap-x-2 cursor-pointer' onClick = {() => navigate("/myorders")}>
                                 <FiPackage className='text-[19px]' />
-                                <p>orders</p>
+                                <p>Orders</p>
                             </li>
                             <hr className='my-2'/>
                             <li className='flexCenter gap-x-2 cursor-pointer' onClick = {() => navigate("/myorders")}>
