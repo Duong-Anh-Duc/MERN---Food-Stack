@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import heroImg from "../assets/bg.png"
 const Hero = () => {
     return (
-        <section className='max-padd-container flex xl:flex-row flex-col gap-5 gap-y-20 z-0 relative'>
+        <section id = {'home'} className='max-padd-container flex xl:flex-row flex-col gap-5 gap-y-20 z-0 relative'>
             <div className= 'absolute xl:-top-1 xl:-right-[42%] -right-1/4 bg-hero bg-repeat-round -z-10 w-full xl:h-[772px] h-[590px] overflow-hidden' />
         <div className="flex-1 pt-48 max-w-[611px]">
             <h2 className='h1 capitalize tracking-[1px]'>
