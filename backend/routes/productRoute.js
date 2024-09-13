@@ -10,4 +10,6 @@ const strorage = multer.diskStorage({
 })
 const upload = multer({storage : strorage})
 productRouter.post("/add", upload.single("image"),productController.addProduct)
+productRouter.get("/list", productController.listProduct)
+productRouter.post("/remove", productController.removeProduct)
 module.exports = productRouter
