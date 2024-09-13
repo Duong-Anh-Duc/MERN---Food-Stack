@@ -2,12 +2,13 @@ import axios from "axios"
 import React, { useState } from 'react'
 import { FaPlus } from "react-icons/fa"
 import { FiUploadCloud } from "react-icons/fi"
+import { toast } from "react-toastify"
 const Add = ({url}) => {
   const[image, setImage] = useState(false)
   const [data, setData] = useState({
     name : "",
     description : "",
-    category : "Curry",
+    category : "Pizza",
     price: ""
   })
   const onChangeHandle = (event) => {
@@ -35,9 +36,10 @@ const Add = ({url}) => {
       }
       )
       setImage(false)
+      toast.success(responese.data.message)
     }
     else{
-
+      toast.error(responese.data.message)
     }
   }
   return (

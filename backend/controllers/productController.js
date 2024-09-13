@@ -27,12 +27,17 @@ module.exports.listProduct = async(req, res) => {
 }
 module.exports.removeProduct = async(req, res) => {
     try{
-        console.log(req.body)
-        const products = await productModel.find({_id :req.body._id})
-        console.log(products)
-        fs.unlink(`uploads/${products.image}`,() => {})
-        await productModel.findByIdAndDelete(req.body._id)
-        res.status(200).json({success : true, message : "Product Removed!"})
+        if(req?.body?._id){
+            console.log(req.body)
+            const products = await productModel.find({_id :req.body._id})
+            console.log(products)
+            fs.unlink(`uploads/${products.image}`,() => {})
+            await productModel.findByIdAndDelete(req.body._id)
+            res.status(200).json({success : true, message : "Product Removed!"})
+        }
+        else{
+            res.status(404).json({success : false, message : "Product Remove Fail!"})
+        }
     }catch(error){
         console.log(error)
         res.status(404).json({success : false, message : "Product Remove Fail!"})
