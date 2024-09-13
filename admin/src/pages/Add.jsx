@@ -8,7 +8,7 @@ const Add = ({url}) => {
   const [data, setData] = useState({
     name : "",
     description : "",
-    category : "Pizza",
+    category : "Curry",
     price: ""
   })
   const onChangeHandle = (event) => {
@@ -80,6 +80,7 @@ const Add = ({url}) => {
               <option value="Curry">Curry</option>
               <option value="Pizza">Pizza</option>
               <option value="Rice">Rice</option>
+              <option value="Deserts">Deserts</option>
               <option value="Drinks">Drinks</option>
               <option value="Fruits">Fruits</option>
             </select>

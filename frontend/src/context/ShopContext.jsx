@@ -3,6 +3,8 @@ import { all_products } from '../assets/data'
 export const ShopContext = createContext()
 
 function ShopContextProvider(props) {
+      const url = "http://localhost:4000"
+      const[token, setToken] = useState("")
     const[cartItems, setCartItems] = useState({})
     const addToCart = (itemId) => {
       if(!cartItems[itemId]){
@@ -34,7 +36,7 @@ function ShopContextProvider(props) {
     }
 
 
-    const contextValue = {all_products, cartItems, setCartItems,addToCart,removeFromCart, getTotalCartItems, getTotalCartAmount}
+    const contextValue = {token, setToken, url, all_products, cartItems, setCartItems,addToCart,removeFromCart, getTotalCartItems, getTotalCartAmount}
   return (
     <ShopContext.Provider value = {contextValue}>
         {props.children}

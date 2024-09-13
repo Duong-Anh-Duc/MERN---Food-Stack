@@ -1,19 +1,11 @@
 import curry from "../assets/ccurry.png";
+import deserts from "../assets/cdeserts.png";
+import drinks from "../assets/cdrinks.png";
+import fruits from "../assets/cfruits.png";
 import pizza from "../assets/cpizza.png";
 import rice from "../assets/crice.png";
-import deserts from "../assets/cdeserts.png";
-import fruits from "../assets/cfruits.png";
-import drinks from "../assets/cdrinks.png";
 
 import food_1 from "./food_1.png";
-import food_2 from "./food_2.png";
-import food_3 from "./food_3.png";
-import food_4 from "./food_4.png";
-import food_5 from "./food_5.png";
-import food_6 from "./food_6.png";
-import food_7 from "./food_7.png";
-import food_8 from "./food_8.png";
-import food_9 from "./food_9.png";
 import food_10 from "./food_10.png";
 import food_11 from "./food_11.png";
 import food_12 from "./food_12.png";
@@ -24,6 +16,7 @@ import food_16 from "./food_16.png";
 import food_17 from "./food_17.png";
 import food_18 from "./food_18.png";
 import food_19 from "./food_19.png";
+import food_2 from "./food_2.png";
 import food_20 from "./food_20.png";
 import food_21 from "./food_21.png";
 import food_22 from "./food_22.png";
@@ -34,6 +27,7 @@ import food_26 from "./food_26.png";
 import food_27 from "./food_27.png";
 import food_28 from "./food_28.png";
 import food_29 from "./food_29.png";
+import food_3 from "./food_3.png";
 import food_30 from "./food_30.png";
 import food_31 from "./food_31.png";
 import food_32 from "./food_32.png";
@@ -44,6 +38,7 @@ import food_36 from "./food_36.png";
 import food_37 from "./food_37.png";
 import food_38 from "./food_38.png";
 import food_39 from "./food_39.png";
+import food_4 from "./food_4.png";
 import food_40 from "./food_40.png";
 import food_41 from "./food_41.png";
 import food_42 from "./food_42.png";
@@ -53,6 +48,11 @@ import food_45 from "./food_45.png";
 import food_46 from "./food_46.png";
 import food_47 from "./food_47.png";
 import food_48 from "./food_48.png";
+import food_5 from "./food_5.png";
+import food_6 from "./food_6.png";
+import food_7 from "./food_7.png";
+import food_8 from "./food_8.png";
+import food_9 from "./food_9.png";
 
 export const categories = [
   {
