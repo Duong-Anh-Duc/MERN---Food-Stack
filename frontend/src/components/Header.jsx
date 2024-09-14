@@ -9,18 +9,17 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 import Navbar from './Navbar'
 const Header = ({setShowLogin}) => {
+    const {getTotalCartItems, token, setToken} = useContext(ShopContext)
     const [menuOpened, setMenuOpened] = useState(false)
-    const [token, settoken] = useState(false)
     const [header, setHeader] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
-    const {getTotalCartItems} = useContext(ShopContext)
     const toggleMenu = () => {
         setMenuOpened(!menuOpened)
     }
     const logout = () => {
         localStorage.removeItem("token")
-        settoken("")
+        setToken("")
         navigate("/")
     }
     useEffect(() => {
@@ -75,7 +74,7 @@ const Header = ({setShowLogin}) => {
                                 <p>Orders</p>
                             </li>
                             <hr className='my-2'/>
-                            <li className='flexCenter gap-x-2 cursor-pointer' onClick = {() => navigate("/myorders")}>
+                            <li className='flexCenter gap-x-2 cursor-pointer' onClick = {logout}>
                                 <TbLogout className='text-[19px]' />
                                 <p>Logout</p>
                             </li>

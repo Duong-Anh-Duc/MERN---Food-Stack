@@ -3,11 +3,11 @@ import { FaMinus, FaPlus } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 const Item = ({product}) => {
-    const {cartItems, addToCart, removeFromCart} = useContext(ShopContext)
+    const {cartItems, addToCart, removeFromCart, url} = useContext(ShopContext)
     return (
         <div className='ring-1 ring-slate-900/5 rounded-xl'>
             <Link to = {""} className = 'flexCenter p-4 ring-1 ring-slate-200/20 bg-white rounded-xl'>
-            <img src={product.image} alt ="productImg" 
+            <img src={url + "/images/" + product.image} alt ="productImg" 
             height={222} width={222}
             className='object-contain aspect-square rounded-xl'
             />

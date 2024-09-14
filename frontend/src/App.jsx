@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import LoginPopup from './components/LoginPopup'
@@ -14,6 +16,7 @@ export default function App() {
   return (
     <div className= "overflow-hidden text-[#404040]">
       <BrowserRouter>
+      <ToastContainer />
         <div className="bg-primary">
           {showLogin ? 
           <LoginPopup setShowLogin = {setShowLogin}/> : <></>}
