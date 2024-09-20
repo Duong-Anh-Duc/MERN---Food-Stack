@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
-import { ShopContext } from '../context/ShopContext'
 import { useNavigate } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext'
 
 const Order = () => {
   const navigate = useNavigate()
@@ -18,6 +18,11 @@ const Order = () => {
     country : "",
     phone : ""
   })
+  const onChangeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value
+    setData(data => ({...data, [name]: value}))
+  }
   const placeOrder = async (e) => {
     e.preventDefault();
     const orderItems = []
@@ -58,6 +63,7 @@ const Order = () => {
         <h3 className='bold-28 mb-4'>Delivery Information</h3>
         <div>
           <input 
+          onChange={onChangeHandler} 
           type = "text" 
           name = 'firstName'
           placeholder='First Name'
@@ -65,6 +71,7 @@ const Order = () => {
           className = 'ring-1 ring-slate-900/15 p-2 pl-3 rounded-sm outline-none w-1/2'
           />
           <input 
+          onChange={onChangeHandler} 
           type="text" 
           name='lastName'
           placeholder='Last Name'
@@ -73,18 +80,21 @@ const Order = () => {
           />
         </div>
         <input 
+        onChange={onChangeHandler} 
         type='email' 
         name = 'email'
         placeholder='Email'
         className = 'ring-1 ring-slate-900/15 p-2 pl-3 rounded-sm outline-none'
         />
           <input 
+          onChange={onChangeHandler} 
         type='text' 
         name = 'phone'
         placeholder='Phone Number'
         className = 'ring-1 ring-slate-900/15 p-2 pl-3 rounded-sm outline-none '
         />
           <input 
+          onChange={onChangeHandler} 
         type='text' 
         name = 'street'
         placeholder='Street'
@@ -92,12 +102,14 @@ const Order = () => {
         />
         <div className='flex gap-3'>
         <input 
+        onChange={onChangeHandler} 
         type='text' 
         name = 'city'
         placeholder='City'
         className = 'ring-1 ring-slate-900/15 p-2 pl-3 rounded-sm outline-none'
         />
          <input 
+         onChange={onChangeHandler} 
         type='text' 
         name = 'state'
         placeholder='State'
@@ -106,12 +118,14 @@ const Order = () => {
         </div>
         <div className='flex gap-3'>
         <input 
+        onChange={onChangeHandler} 
         type='text' 
         name = 'zipcode'
         placeholder='Zip Code'
         className = 'ring-1 ring-slate-900/15 p-2 pl-3 rounded-sm outline-none'
         />
          <input 
+         onChange={onChangeHandler} 
         type='text' 
         name = 'country'
         placeholder='Country'

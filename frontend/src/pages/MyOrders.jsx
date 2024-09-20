@@ -51,7 +51,7 @@ const MyOrders = () => {
                     <span className='hidden lg:flex'>
                       &#x25cf;
                     </span>
-                    <b>{order.Status}</b>
+                    <b>{order.status}</b>
                   </p>
                 </td>
                 <td className='p-1'>

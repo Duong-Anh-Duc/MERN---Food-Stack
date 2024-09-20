@@ -6,4 +6,5 @@ orderRouter.post("/place", Middleware.authMiddleware, placeOrderController.place
 orderRouter.post("/verify", Middleware.authMiddleware, placeOrderController.verifyOrder)
 orderRouter.post("/userorders", Middleware.authMiddleware, placeOrderController.userOrder)
 orderRouter.get("/list", placeOrderController.listOrders)
+orderRouter.post("/status", placeOrderController.updateStatus)
 module.exports = orderRouter

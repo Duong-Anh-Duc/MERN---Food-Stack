@@ -14,12 +14,21 @@ const Orders = ({url}) => {
       toast.error("Error")
     }
   }
+  const ChangeStatus = async(event, orderId) => {
+    const response = await axios.post(url + "/api/order/status", {
+      orderId,
+      status: event.tartget.value
+    })
+    if(response.data.success){
+      await fetchAllOrders()
+    }
+  }
 useEffect(() => {
   fetchAllOrders()
 }, [])
   return (
-   <div>
-    <h4 className='bold-24'>Orders Page</h4>
+   <div className = 'p-4 sm:p-10 box-border w-full bg-white rounded-xl'>
+    <h4 className='bold-22 uppercase'>Orders Page</h4>
     <div className = 'overflow-auto mt-5'>
         <table className = 'w-full'>
           <thead>
@@ -44,7 +53,8 @@ useEffect(() => {
                     else{
                       return item.name + " x " + item.quantity + ", "
                     }
-                  })}</p>
+                  })}
+                  </p>
                   </div>
                   <hr className = 'w-1/2'/>
                   <div>
@@ -52,20 +62,22 @@ useEffect(() => {
                       {order.address.firstName + " " + order.address.
                       lastName}
                     </h5>
+                    <div>
+                    <p>{order.address.street + ","}</p>
+                    <p>{order.address.city + ", " + order.address.state + ", " + order.address.country + ", "
+                    + order.address.zipcode + ""}</p>
+                    </div>
+                    <p>{order.address.phone}</p>
                   </div>
                 </td>
-                <td className = 'p-1'>${order.amount}</td>
                 <td className = 'p-1 text-center'>{order.items.length}</td>
+                <td className = 'p-1'>${order.amount}</td>
                 <td className = 'p-1'>
-                  <p className = 'flexCenter gap-x-2'>
-                    <span className='hidden lg:flex'>
-                      &#x25cf;
-                    </span>
-                    <b>{order.Status}</b>
-                  </p>
-                </td>
-                <td className='p-1'>
-                  <button className='btn-white rounded-sm'>Track</button>
+                  <select onChange={(event) => ChangeStatus(event, order._id)} value = {order.status} className = 'bg-primary ring-1 ring-secondary text-sm max-w-20 xl:max-w-36' >
+                      <option value="Product Loading" className = 'medium-14'>Product Loading</option>
+                      <option value = "Out For Delivery" className = 'medium-14'>Out For Delivery</option>
+                      <option value = "Delivered" className = 'medium-14'>Delivered</option>
+                  </select>
                 </td>
               </tr>
             ))}
