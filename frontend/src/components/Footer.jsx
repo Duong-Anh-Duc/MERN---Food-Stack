@@ -80,7 +80,7 @@ const Footer = () => {
             </div>
             <div className = "flex flex-col items-center mt-8">
                <hr className='h-[1px] w-full max-w-screen-md my-4 border-white'/>
-            <p className='text-center text-sm'>&copy; {new Date().getFullYear} FoodStack | All rights reserved</p>
+            <p className='text-center text-sm'>&copy; {new Date().getFullYear()} FoodStack | All rights reserved</p>
             </div>
         </footer>
     )

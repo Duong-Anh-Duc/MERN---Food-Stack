@@ -17,7 +17,7 @@ const Item = ({product}) => {
             <p className='line-clamp-2'>{product.description}</p>
            </div>
            <div className='flexBetween bg-white rounded-xl p-3 py-4'>
-            <div class = 'flex flex-col gap-2 medium-14'>
+            <div className = 'flex flex-col gap-2 medium-14'>
                 <h5>Savings</h5>
                 <div className='bg-primary flexBetween gap-2 rounded-sm'>
                     <FaMinus onClick={()=>removeFromCart(product._id)} className='bg-primary h-5 w-5 p-1 cursor-pointer rounded-sm' />

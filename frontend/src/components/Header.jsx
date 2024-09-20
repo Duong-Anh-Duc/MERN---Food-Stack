@@ -69,9 +69,9 @@ const Header = ({setShowLogin}) => {
                     <div className='group relative'>
                         <FaCircleUser className='text-2xl' />
                         <ul className='bg-primary shadow-sm p-3 w-24 ring-1 ring-slate-900/15 rounded absolute right-0 hidden group-hover:flex flex-col'>
-                            <li className='flexCenter gap-x-2 cursor-pointer' onClick = {() => navigate("/order")}>
+                            <li className='flexCenter gap-x-2 cursor-pointer' onClick = {() => navigate("/myorders")}>
                                 <FiPackage className='text-[19px]' />
-                                <p>Orders</p>
+                                <p>MyOrders</p>
                             </li>
                             <hr className='my-2'/>
                             <li className='flexCenter gap-x-2 cursor-pointer' onClick = {logout}>

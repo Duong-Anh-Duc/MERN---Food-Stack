@@ -12,7 +12,7 @@ const Chefs = () => {
             dolore, unde cumque porro obcaecati?
             </p>
         </div>
-        <div className='max-padd-container grid gird-cols-1
+        <div className='max-padd-container grid grid-cols-1
         md:grid-cols-2 xl:grid-cols-3 gap-x-10'>
             <div>
                 <img src={chef1} alt="" className='object-contain

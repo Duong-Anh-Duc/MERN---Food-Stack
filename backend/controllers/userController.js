@@ -28,7 +28,6 @@ module.exports.createToken = (id) => {
 
 module.exports.registerUser = async(req, res) => {
     const {name, email, password} = req.body
-    console.log(req.body)
     try {
         const exists = await userModel.findOne({email})
         if(exists){

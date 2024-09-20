@@ -7,7 +7,6 @@ module.exports.addToCart = async (req, res) => {
     try{
         let userData = await userModel.findById(req.body.userId)
         let cartData = await userData.cartData
-        console.log(req.body.itemId)
         if(!cartData[req.body.itemId]){
             cartData[req.body.itemId] = 1
         }

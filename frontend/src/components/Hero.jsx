@@ -26,7 +26,7 @@ const Hero = () => {
         </div>
         {}
         <div className='xl:flex-1 flex justify-end items-end'>
-            <div className='relative xl:w:full w-[90%] xl:h-full
+            <div className='relative xl:w-full w-[90%] xl:h-full
             h-[590px] xl:pt-20 xl:pl-24 z-0'>
                 <img src = {heroImg} alt = ""></img>
             </div>

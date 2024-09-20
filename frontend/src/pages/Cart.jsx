@@ -68,7 +68,7 @@ const Cart = () => {
               <h4 className='bold-18'>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</h4>
             </div>
             </div>
-            <button onClick={() => navigate('`order')}
+            <button onClick={() => navigate('/order')}
               className='btn-secondary w-52 rounded'>Proceed to Checkout</button>
           </div>
           <div className='flex flex-1 flex-col gap-8'>
