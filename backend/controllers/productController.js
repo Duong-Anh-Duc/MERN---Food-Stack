@@ -28,7 +28,17 @@ module.exports.listProduct = async (req, res) => {
         res.status(500).json({success: false, message: "Error fetching products"}) // 500 Internal Server Error
     }
 }
-
+module.exports.EditProduct = async (req, res) => {
+    try{
+        const data = req.body.data
+        console.log(data)
+        await productModel.updateOne({_id : data.id}, {name : data.name, description : data.description, price : 
+            Number(data.price), category : data.category, image : data.image})
+        res.status(200).json({success:true})
+    }catch{
+        res.status(500).json({success:false})
+    }
+}
 module.exports.removeProduct = async (req, res) => {
     try {
         const productId = req.body._id
