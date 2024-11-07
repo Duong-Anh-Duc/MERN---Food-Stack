@@ -8,7 +8,7 @@ import Add from "./pages/Add";
 import List from "./pages/List";
 import Orders from "./pages/Orders";
 const App = () => {
-  const url = "http://localhost:4000";
+  const url = "https://mern-food-stack.onrender.com/";
   return (
     <BrowserRouter>
       <ToastContainer />
