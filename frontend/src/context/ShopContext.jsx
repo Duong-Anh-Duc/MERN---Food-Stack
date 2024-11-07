@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useState } from 'react'
 export const ShopContext = createContext()
 
 function ShopContextProvider(props) {
-  const url = "https://mern-food-stack.onrender.com/"
+  const url = "https://mern-food-stack.onrender.com"
   const [token, setToken] = useState("")
   const [cartItems, setCartItems] = useState({})
   const [all_products, setAll_products] = useState([])
